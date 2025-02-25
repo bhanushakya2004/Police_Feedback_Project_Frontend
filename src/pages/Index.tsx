@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'next-themes';
@@ -78,6 +77,10 @@ const Index = () => {
                   >
                     <option value="en">English</option>
                     <option value="hi">हिंदी</option>
+                    <option value="mr">मराठी</option>
+                    <option value="pa">ਪੰਜਾਬੀ</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="bn">বাংলা</option>
                   </select>
                 </div>
                 <button

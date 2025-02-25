@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { MessageSquare, Send, User, Phone, MapPin, Building, PenLine } from 'lucide-react';
+import { MessageSquare, Send, User, Phone, MapPin, Building, PenLine, CreditCard } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const FeedbackForm = () => {
@@ -14,6 +13,7 @@ const FeedbackForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phoneNumber: '',
+    aadharNumber: '',
     address: '',
     policeStationNumber: '',
     feedbackType: 'general',
@@ -43,6 +43,7 @@ const FeedbackForm = () => {
     setFormData({
       name: '',
       phoneNumber: '',
+      aadharNumber: '',
       address: '',
       policeStationNumber: '',
       feedbackType: 'general',
@@ -97,6 +98,24 @@ const FeedbackForm = () => {
               required
             />
           </div>
+        </div>
+
+        {/* Aadhar Number */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <CreditCard className="w-4 h-4 inline-block mr-2" />
+            {t('aadharNumber')}
+          </label>
+          <input
+            type="text"
+            name="aadharNumber"
+            value={formData.aadharNumber}
+            onChange={handleChange}
+            pattern="[0-9]{12}"
+            placeholder="XXXX XXXX XXXX"
+            className="w-full p-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+            required
+          />
         </div>
 
         {/* Address and Police Station */}
